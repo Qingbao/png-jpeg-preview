@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'ImagePreview',
   props: {
@@ -127,7 +127,7 @@ export default {
       this.imageSize = 0
       this.$emit('input-clear')
     },
-    processImageData(data) {
+    processImageData(data: any) {
       if (!data) {
         this.imageUrl = ''
         return
@@ -160,7 +160,7 @@ export default {
         img.src = this.imageUrl
       })
     },
-    detectFormat(data) {
+    detectFormat(data: any) {
       // Simple format detection based on data signature
       if (!data) return ''
 
@@ -190,7 +190,7 @@ export default {
 
       return ''
     },
-    formatSize(bytes) {
+    formatSize(bytes: any) {
       if (bytes === 0) return '0 Bytes'
 
       const k = 1024
